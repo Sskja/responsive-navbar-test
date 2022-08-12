@@ -19,13 +19,14 @@ header h2 {
     padding: 20px 40px;
 }
 header nav {
-    display: none;
     position: absolute;
     background-color: #007400;
     top: 100%;
     left: 0;
     width: 100%;
     text-align: left;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out 50ms;
 }
 header nav li{
     text-decoration: none;
@@ -35,12 +36,16 @@ header nav li{
 header nav li a {
     text-decoration: none;
     text-transform: uppercase;
+    display: none;
 }
 header nav li a:hover {
     color: black;
     transition: .1s;
 }
 .checkbox:checked ~ nav {
+    opacity: 1;
+}
+.checkbox:checked ~ nav li a {
     display: block;
 }
 .checkbox {
